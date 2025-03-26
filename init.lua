@@ -73,6 +73,20 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+--  Keymaps added by Zeke
+--  Save and run 'make' (to compile a LaTeX document, C project, etc)
+vim.keymap.set('n', '<leader>m', function()
+  vim.cmd 'w'
+  -- IMPORTANT NOTE: If make has any errors, it will just spew its output
+  -- and ruin your editing session.
+  print "running 'make'"
+  os.execute 'make > /dev/null'
+end, { noremap = true, silent = false, desc = 'Write and [M]ake' })
+vim.keymap.set('n', '<leader>l', function()
+  print "running 'make clean'"
+  os.execute 'make clean > /dev/null'
+end, { noremap = true, silent = false, desc = 'Make C[l]ean' })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
