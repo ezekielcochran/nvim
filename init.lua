@@ -73,7 +73,7 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
---  Keymaps added by Zeke
+--  Zeke added keymaps
 --  Save and run 'make' (to compile a LaTeX document, C project, etc)
 vim.keymap.set('n', '<leader>m', function()
   vim.cmd 'w'
@@ -156,6 +156,16 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  --
+  -- Zeke added plugins
+  'iamcco/markdown-preview.nvim',
+  cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+  build = 'cd app && yarn install',
+  init = function()
+    vim.g.mkdp_filetypes = { 'markdown' }
+  end,
+  ft = { 'markdown' },
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -586,7 +596,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- ZEKE_MARK: LSP servers
+        -- Zeke added LSP servers
         clangd = {},
         pyright = {},
         bashls = {},
