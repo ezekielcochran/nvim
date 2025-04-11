@@ -602,6 +602,7 @@ require('lazy').setup({
         bashls = {},
         markdown_oxide = {},
         texlab = {},
+        ts_ls = {},
 
         lua_ls = {
           -- cmd = { ... },
