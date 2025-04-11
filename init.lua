@@ -601,7 +601,16 @@ require('lazy').setup({
         pyright = {},
         bashls = {},
         markdown_oxide = {},
-        texlab = {},
+        texlab = {
+          settings = {
+            texlab = {
+              diagnostics = {
+                ignoredPatterns = { '.*undefined references.*' },
+              },
+            },
+          },
+        },
+        tsserver = {},
 
         lua_ls = {
           -- cmd = { ... },
