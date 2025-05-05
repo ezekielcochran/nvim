@@ -605,7 +605,7 @@ require('lazy').setup({
           settings = {
             texlab = {
               diagnostics = {
-                ignoredPatterns = { '.*undefined references.*' },
+                ignoredPatterns = { '.*Citation.*undefined.*' },
               },
             },
           },
