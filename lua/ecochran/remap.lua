@@ -1,3 +1,8 @@
+--
+-- Note that several plugins have keymaps defined in their
+-- respective config/*.lua files (telescope, cmp, etc)
+--
+
 vim.g.mapleader = " "
 -- I don't plan on using this, but lazy says it wants it
 vim.g.maplocalleader = "\\"
@@ -31,5 +36,3 @@ vim.keymap.set("n", "<leader>l", function()
     print "running \"make clean\""
     os.execute "make clean > /dev/null"
 end, { noremap = true, silent = false, desc = "Make C[l]ean" })
-
--- Note that telescope maps are in it's plugin settings

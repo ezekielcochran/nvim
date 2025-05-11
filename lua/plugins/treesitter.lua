@@ -1,7 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile" },
+    build = ":TSUpdate",
     opts = {
         -- TODO: are these the languages I want?
         -- can I make a list of supported languages to reference anywhere (LSPs, for example)?

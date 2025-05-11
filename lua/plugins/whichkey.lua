@@ -1,19 +1,13 @@
 return {
     "folke/which-key.nvim",
-    event = "VeryLazy", -- loads after UI events (so it doesn't slow down startup)
+    event = "VeryLazy", -- loads after UI events
     opts = {
-        delay = 500,
+        dleay = 500,
         plugins = {
             spelling = {
                 enabled = true,
-                suggestions = 20,
+                suggestions = 10,
             },
-        },
-        win = {
-            border = "single", -- none, single, double, shadow
-        },
-        layout = {
-            spacing = 4,
         },
     },
     config = function(_, opts)
