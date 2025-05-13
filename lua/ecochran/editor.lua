@@ -6,7 +6,7 @@ vim.opt.softtabstop = 4     -- Number of spaces a <Tab> feels like in insert mod
 
 -- Assorted editor settings
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
@@ -15,10 +15,10 @@ vim.opt.colorcolumn = "80"
 -- Show invisible characters
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "» ",
-  trail = "·",
-  nbsp = "␣",
-  extends = "›",
-  precedes = "‹",
-  -- eol = "↲" -- this one is a little too verbose
+    tab = "» ",
+    trail = "·",
+    nbsp = "␣",
+    extends = "›",
+    precedes = "‹",
+    -- eol = "↲" -- this one is a little too verbose
 }
