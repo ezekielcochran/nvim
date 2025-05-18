@@ -1,6 +1,7 @@
 return {
     "github/copilot.vim",
-    event = { "BufReadPost", "BufNewFile" },
+    -- No events: doesn't load until explicitly loaded (:Lazy load copilot.vim)
+    lazy = true,
     config = function()
         vim.g.copilot_no_tab_map = true
         vim.api.nvim_set_keymap("i", "<C-y>", 'copilot#Accept("<CR>")', {
