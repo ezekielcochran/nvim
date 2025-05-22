@@ -7,6 +7,16 @@ vim.g.mapleader = " "
 -- I don't plan on using this, but lazy says it wants it
 vim.g.maplocalleader = "\\"
 
+-- rename a symbol
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame Symbol" })
+
+-- change foldmethod
+vim.keymap.set("n", "<leader>fi", ":set foldmethod=indent<CR>", { desc = "Set [F]oldmethod [I]ndent" })
+vim.keymap.set("n", "<leader>fm", ":set foldmethod=manual<CR>", { desc = "Set [F]oldmethod [M]anual" })
+
+-- Load copilot.vim (left unloaded by default)
+vim.keymap.set("n", "<leader>cl", ":Lazy load copilot.vim<CR>", { desc = "[C]opilot [L]oad" })
+
 -- Move highlighted blocks of code
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
