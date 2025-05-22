@@ -11,6 +11,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = "80"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Show invisible characters
 vim.opt.list = true
