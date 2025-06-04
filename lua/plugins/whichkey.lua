@@ -2,7 +2,7 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy", -- loads after UI events
     opts = {
-        dleay = 500,
+        delay = 500,
         plugins = {
             spelling = {
                 enabled = true,
