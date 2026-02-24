@@ -13,6 +13,8 @@ vim.opt.scrolloff = 8
 vim.opt.colorcolumn = { "80", "120" }
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.wrap = false
+vim.opt.spell = true
 
 -- Show invisible characters
 vim.opt.list = true

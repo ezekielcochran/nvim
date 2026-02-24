@@ -7,6 +7,9 @@ vim.g.mapleader = " "
 -- I don't plan on using this, but lazy says it wants it
 vim.g.maplocalleader = "\\"
 
+-- delete by word
+vim.keymap.set("i", "<M-BS>", "<C-w>", { desc = "Delete previous word" })
+
 -- rename a symbol
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame Symbol" })
 
