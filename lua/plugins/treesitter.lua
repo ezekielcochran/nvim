@@ -6,6 +6,7 @@ return {
         -- TODO: are these the languages I want?
         -- can I make a list of supported languages to reference anywhere (LSPs, for example)?
         ensure_installed = {
+            "latex",
             "c",
             "lua",
             "rust",
@@ -14,7 +15,7 @@ return {
             "bash",
             "python",
             "javascript",
-            "html"
+            "html",
         },
         highlight = {
             enable = true,
