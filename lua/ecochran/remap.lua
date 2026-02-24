@@ -37,12 +37,30 @@ end, { desc = "List [E]rrors" })
 --  Save and run 'make' (to compile a LaTeX document, C project, etc)
 vim.keymap.set("n", "<leader>m", function()
     vim.cmd "w"
-    -- IMPORTANT NOTE: If make has any errors, it will just spew its output
-    -- and ruin your editing session.
-    print "running \"make\""
-    os.execute "make > /dev/null"
+    print "making..."
+    vim.system({ "make" }, { text = true }, function(res)
+        if res.code == 0 then
+            vim.schedule(function()
+                print("make succeeded")
+            end)
+        else
+            vim.schedule(function()
+                vim.notify(res.stderr, vim.log.levels.ERROR)
+            end)
+        end
+    end)
 end, { noremap = true, silent = false, desc = "Write and [M]ake" })
 vim.keymap.set("n", "<leader>l", function()
-    print "running \"make clean\""
-    os.execute "make clean > /dev/null"
+    print "making clean..."
+    vim.system({ "make", "clean" }, { text = true }, function(res)
+        if res.code == 0 then
+            vim.schedule(function()
+                print("make clean succeeded")
+            end)
+        else
+            vim.schedule(function()
+                vim.notify(res.stderr, vim.log.levels.ERROR)
+            end)
+        end
+    end)
 end, { noremap = true, silent = false, desc = "Make C[l]ean" })
