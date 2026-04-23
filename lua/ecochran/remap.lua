@@ -17,6 +17,23 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[R]e[n]ame Symbo
 vim.keymap.set("n", "<leader>fi", ":set foldmethod=indent<CR>", { desc = "Set [F]oldmethod [I]ndent" })
 vim.keymap.set("n", "<leader>fm", ":set foldmethod=manual<CR>", { desc = "Set [F]oldmethod [M]anual" })
 
+-- git add everything
+vim.keymap.set("n", "<leader>a", function ()
+    vim.cmd "w"
+    print "Git adding..."
+    vim.system({ "git", "add", "-A" }, { text = true }, function(res)
+        if res.code == 0 then
+            vim.schedule(function()
+                print("Git add succeeded.")
+            end)
+        else
+            vim.schedule(function()
+                vim.notify(res.stderr, vim.log.levels.ERROR)
+            end)
+        end
+    end)
+end, { desc = "Git [A]dd" })
+
 -- Load copilot.vim (left unloaded by default)
 vim.keymap.set("n", "<leader>cl", ":Lazy load copilot.vim<CR>", { desc = "[C]opilot [L]oad" })
 
