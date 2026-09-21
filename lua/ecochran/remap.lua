@@ -84,3 +84,8 @@ vim.keymap.set("n", "<leader>l", function()
         end
     end)
 end, { noremap = true, silent = false, desc = "Make C[l]ean" })
+
+-- LaTeX table of contents
+vim.keymap.set("n", "<leader>t", ":VimtexTocOpen<CR>", { desc = "LaTeX [T]able of contents" })
+
+vim.keymap.set("n", "<leader>v", ":VimtexView<CR>", { desc = "[V]iew in PDF" })

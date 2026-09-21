@@ -2,21 +2,25 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
-        local lspconfig = require("lspconfig")
-        lspconfig.pyright.setup({})
-        lspconfig.ts_ls.setup({})
-        lspconfig.rust_analyzer.setup({})
-        lspconfig.clangd.setup({})
-        lspconfig.bashls.setup({})
-        lspconfig.texlab.setup({})
-        lspconfig.lua_ls.setup({
+        vim.lsp.config("lua_ls", {
             settings = {
                 Lua = {
                     diagnostics = {
                         globals = { "vim" },
-                    }
-                }
-            }
+                    },
+                },
+            },
+        })
+
+        vim.lsp.enable({
+            "pyright",
+            "ts_ls",
+            "rust_analyzer",
+            "clangd",
+            "bashls",
+            "texlab",
+            "jdtls",
+            "lua_ls",
         })
     end,
 }
