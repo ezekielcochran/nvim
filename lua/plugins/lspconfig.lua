@@ -11,6 +11,15 @@ return {
                 },
             },
         })
+        vim.lsp.config("texlab", {
+            settings = {
+                texlab = {
+                    diagnostics = {
+                        ignoredPatterns = { "Unused label", "may have changed" },
+                    },
+                },
+            },
+        })
 
         vim.lsp.enable({
             "pyright",
